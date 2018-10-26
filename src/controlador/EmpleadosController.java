@@ -72,7 +72,7 @@ public class EmpleadosController extends Controlador {
     }
     
     private void listarDepartamentos() {
-        List<Departamento> listado = (List<Departamento>) 
+        List listado = (List<Departamento>) 
                 servicioDepartamento.buscarTodos();
         
         dptoPresenter.ver(listado);
@@ -100,7 +100,7 @@ public class EmpleadosController extends Controlador {
     }
     
     private void buscar() {
-        empleado = servicioEmpleado.buscar(cedula.get());
+        empleado = servicioEmpleado.buscarPorCedula(cedula.get());
     }
     
     boolean vaAGuardar = true;
@@ -174,7 +174,7 @@ public class EmpleadosController extends Controlador {
         try {
             
             cedula = new Cedula(vista.txtCedula.getText());
-            e = servicioEmpleado.buscar(cedula.get());
+            e = servicioEmpleado.buscarPorCedula(cedula.get());
             
             if (!e.esNull()) {
                 if (esDeOtroEmpleadoLaCedulaAsignada()) {
@@ -270,7 +270,7 @@ public class EmpleadosController extends Controlador {
     
     private void enviarDatosAlFormulario() {
         departamento =  servicioDepartamento.buscarPorNombre(vista.lblDepartamentoEmpleado.getText());
-        empleado = servicioEmpleado.buscar(vista.lblCedulaEmpleado.getText());
+        empleado = servicioEmpleado.buscarPorCedula(vista.lblCedulaEmpleado.getText());
         
         vista.txtCedula.setText(empleado.getCedula());
         vista.txtNombreEmpleado.setText(empleado.getNombre());

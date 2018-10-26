@@ -5,7 +5,8 @@ import modelo.*;
 import java.util.*;
 import org.joda.time.DateTime;
 
-public interface IServicioAsistencia extends IDAO<Asistencia>{
+
+public interface IServicioAsistencia {
     public Collection<Asistencia> asistenciasDelMes(int mes, int year);
     public Collection<Asistencia> buscarAsistenciaDelEmpleado(String cedula);
     public Collection<Asistencia> asistenciasDeHoy();

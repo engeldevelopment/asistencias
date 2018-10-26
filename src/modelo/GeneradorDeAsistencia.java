@@ -1,16 +1,16 @@
 
 package modelo;
 
-import dao.IServicioAsistencia;
+import dao.AsistenciaDAO;
 import excepciones.NoHayEmpleadoException;
 import java.util.*;
 
 public class GeneradorDeAsistencia {
     private List<Empleado> listado;
     private List<Asistencia> listadoDeAsistencia = new ArrayList();
-    private IServicioAsistencia servicio;
+    private AsistenciaDAO servicio;
     
-    public GeneradorDeAsistencia(List<Empleado> list, IServicioAsistencia servicio) {
+    public GeneradorDeAsistencia(List<Empleado> list, AsistenciaDAO servicio) {
         this.listado = list;
         this.servicio = servicio;
     }

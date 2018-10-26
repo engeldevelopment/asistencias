@@ -7,14 +7,13 @@ import java.util.*;
 import org.joda.time.DateTime;
 
 public class GeneradorDeInasistencia {
-    
-    private IServicioAsistencia servicioDeAsistencia;
-    private IServicioInasistencia servicioDeInasistencia;
+    private AsistenciaDAO servicioDeAsistencia;
+    private InasistenciaDAO servicioDeInasistencia;
     private MotivoDeInasistencia motivo;
     private Time horaActual;
     
-    public GeneradorDeInasistencia(IServicioInasistencia servicioDeInasistencia, 
-            IServicioAsistencia servicioDeAsistencia, MotivoDeInasistencia motivo) {
+    public GeneradorDeInasistencia(InasistenciaDAO servicioDeInasistencia, 
+            AsistenciaDAO servicioDeAsistencia, MotivoDeInasistencia motivo) {
         
         this.servicioDeAsistencia = servicioDeAsistencia;
         this.servicioDeInasistencia = servicioDeInasistencia;

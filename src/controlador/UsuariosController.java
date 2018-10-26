@@ -11,7 +11,7 @@ import nicon.notify.core.*;
 
 public class UsuariosController extends Controlador {
     
-    private IServicioDeUsuario servicio;
+    private UsuarioDAO servicio;
     private ServicioDeLogin acceso;
     private ManejadorDeEventos manejador;
     private Menu vista;

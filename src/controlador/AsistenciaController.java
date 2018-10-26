@@ -15,7 +15,7 @@ import presenter.ReporteDeEntradaSalidaPresenter;
 
 public class AsistenciaController extends Controlador {
     
-    private IServicioAsistencia servicio;
+    private AsistenciaDAO servicio;
     private Asistencia asistencia;
     private AsistenciaPresenter presenter;
     private List<Asistencia> listadoDeAsistencias;

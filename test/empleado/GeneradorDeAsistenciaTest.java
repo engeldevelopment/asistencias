@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 
 public class GeneradorDeAsistenciaTest {
     
-    private IServicioAsistencia servicio;
+    private AsistenciaDAO servicio;
     private List<Empleado> list;
     private GeneradorDeAsistencia generador;
     

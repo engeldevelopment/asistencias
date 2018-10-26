@@ -1,21 +1,21 @@
 package seguridad;
 
 import excepciones.ErrorLoginException;
-import dao.IServicioDeUsuario;
+import dao.UsuarioDAO;
 
 public class ServicioDeLogin {
     
-    private IServicioDeUsuario servicio;
+    private UsuarioDAO servicio;
     private Usuario user;
     
-    public ServicioDeLogin(IServicioDeUsuario servicio) {
+    public ServicioDeLogin(UsuarioDAO servicio) {
         this.servicio = servicio;
     }
     
     public Usuario login(String usuario, String clave) throws 
             ErrorLoginException {
          
-        user = servicio.buscar(usuario);
+        user = servicio.buscarPorNombre(usuario);
         if (user.esNull()) {
             throw new ErrorLoginException("Este usuario no existe!");
         }

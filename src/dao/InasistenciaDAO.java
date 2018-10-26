@@ -5,12 +5,10 @@ import modelo.Inasistencia;
 import java.util.*;
 import nicon.notify.core.*;
 import org.hibernate.*;
-import org.hibernate.criterion.*;
 import hibernate.HibernateUtil;
 import org.joda.time.DateTime;
 
-public class InasistenciaDAO implements IServicioInasistencia {
-
+public class InasistenciaDAO extends Persistencia<Inasistencia> implements IServicioInasistencia {
     private Session sesion;
 
     public InasistenciaDAO(Session sesion) {
@@ -19,92 +17,6 @@ public class InasistenciaDAO implements IServicioInasistencia {
 
     public InasistenciaDAO() {
        
-    }
-    
-    @Override
-    public void guardar(Inasistencia t) {
-        try {
-            sesion = HibernateUtil.getSessionFactory().openSession();
-            sesion.beginTransaction();
-            sesion.saveOrUpdate(t);
-            sesion.getTransaction().commit();
-        } catch (HibernateException e) {
-            Notification.windowMessage(null, "Disculpe!", "Ha ocurrido un Error:"
-                    +e.getMessage(), 
-                    NiconEvent.NOTIFY_ERROR);
-        } finally {
-            sesion.close();
-        }
-        
-    }
-
-    @Override
-    public Inasistencia buscar(Object filtro) {
-        Inasistencia inasistencia = new Inasistencia();
-        try {
-            sesion = HibernateUtil.getSessionFactory().openSession();
-            sesion.beginTransaction();
-            Criteria criterio = sesion.createCriteria(Inasistencia.class);
-            criterio.add(Restrictions.eq("id", filtro));
-            inasistencia = (Inasistencia) criterio.list().get(0);
-        } catch (HibernateException e) {
-            Notification.windowMessage(null, "Disculpe!", "Ha ocurrido un Error:"
-                    +e.getMessage(), 
-                    NiconEvent.NOTIFY_ERROR);
-        } finally {
-            sesion.close();
-        }
-        return inasistencia;
-    }
-
-    @Override
-    public void actualizar(Inasistencia t) {
-        try {
-            sesion = HibernateUtil.getSessionFactory().openSession();
-            sesion.beginTransaction();
-            sesion.update(t);
-            sesion.getTransaction().commit();
-        } catch (HibernateException e) {
-            Notification.windowMessage(null, "Disculpe!", "Ha ocurrido un Error:"
-                    +e.getMessage(), 
-                    NiconEvent.NOTIFY_ERROR);
-        } finally {
-            sesion.close();
-        }
-    }
-
-    @Override
-    public void eliminar(Inasistencia t) {
-        try {
-            sesion = HibernateUtil.getSessionFactory().openSession();
-            sesion.beginTransaction();
-            sesion.delete(t);
-            sesion.getTransaction().commit();
-        } catch (HibernateException e) {
-            Notification.windowMessage(null, "Disculpe!", "Ha ocurrido un Error:"
-                    + e.getMessage(), 
-                    NiconEvent.NOTIFY_ERROR);
-        } finally {
-            sesion.close();
-        }
-    }
-
-    @Override
-    public Collection<Inasistencia> buscarTodos() {
-        List<Inasistencia> lista = new ArrayList<>();
-        try {
-            sesion = HibernateUtil.getSessionFactory().openSession();
-            sesion.beginTransaction();
-            Criteria criterio = sesion.createCriteria(Inasistencia.class);
-            criterio.addOrder(Order.asc("id"));
-            lista = criterio.list();
-        } catch (HibernateException e) {
-            Notification.windowMessage(null, "Disculpe!", "Ha ocurrido un Error:"
-                    + e.getMessage(), 
-                    NiconEvent.NOTIFY_ERROR);
-        }
-        
-        return lista;
     }
 
     @Override

@@ -22,8 +22,8 @@ public class JornadaController extends Controlador {
     private ManejadorDeEventosAction manejador;
     private GeneradorDeInasistencia generador;
     private GeneradorDeAsistencia generadorDeAsistencia;
-    private IServicioAsistencia servicioDeAsistencia;
-    private IServicioInasistencia servicioDeInasistencia;
+    private AsistenciaDAO servicioDeAsistencia;
+    private InasistenciaDAO servicioDeInasistencia;
     private MotivoDeInasistenciaDAO servicioDeMotivo;
     private SimpleDateFormat formatoDeHora;
     private ReporteDeInasistenciaDiariaPresenter reporteDeInasistencia;

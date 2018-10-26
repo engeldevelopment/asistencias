@@ -6,13 +6,12 @@ import dao.*;
 import org.joda.time.*;
 
 public class JustificacionDeInasistencia {
-    
     private Inasistencia inasistencia;
     private DateTime fechaActual;
-    private IServicioInasistencia servicio;
+    private InasistenciaDAO servicio;
     
     public JustificacionDeInasistencia(Inasistencia inasistencia, 
-            DateTime fechaActual, IServicioInasistencia servicio) {
+            DateTime fechaActual, InasistenciaDAO servicio) {
         
         this.inasistencia = inasistencia;
         this.fechaActual = fechaActual;

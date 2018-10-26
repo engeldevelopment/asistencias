@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class LoginTest {
     
     private ServicioDeLogin servicio;
-    private IServicioDeUsuario servicioDeUsuario;
+    private UsuarioDAO servicioDeUsuario;
     
     public LoginTest() {
     }

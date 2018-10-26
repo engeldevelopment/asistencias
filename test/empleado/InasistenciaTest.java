@@ -17,7 +17,7 @@ public class InasistenciaTest {
     private JustificacionDeInasistencia justificacion;
     private DateTime diaActual;
     private DateTime diaGenerada;
-    private IServicioInasistencia servicoInasistencia;
+    private InasistenciaDAO servicoInasistencia;
     
     public InasistenciaTest() {
     }

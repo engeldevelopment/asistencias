@@ -16,7 +16,7 @@ import org.joda.time.format.*;
 public class InasistenciasController extends Controlador {
     
     private Menu vista;
-    private IServicioInasistencia servicioDeInasistencia;
+    private InasistenciaDAO servicioDeInasistencia;
     private ManejadorDeEventos manejador;
     private InasistenciaPresenter presenter;
     private JustificacionDeInasistencia justificacion;
